@@ -22,7 +22,9 @@ class OrderCreateAPIView(CreateAPIView):
     serializer_class = OrderModelSerializer
 class BronStadiumTimeAPIView(APIView):
     def get(self,request):
-        user = request.user.role
+        user_id=request.user
+        user = request.user.id #12
+        Stadium.objects.filter()
         if user == 'user':
             order=Order.objects.all()
             serializer=BronStadiumTimeModelSerializer(order,many=True)
